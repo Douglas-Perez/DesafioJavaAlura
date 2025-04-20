@@ -27,10 +27,10 @@ public class Audio {
     }
 
     public void curtir() {
-        totaCurtidas += 1;
+        totaCurtidas++;
     }
 
     public void reprosuzir() {
-        System.out.println("Tocando: " + titulo);
+        totalReproducoes++;
     }
 }

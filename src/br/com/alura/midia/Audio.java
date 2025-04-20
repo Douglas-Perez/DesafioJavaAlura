@@ -10,6 +10,10 @@ public class Audio {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public int getTotalReproducoes() {
         return totalReproducoes;
     }
@@ -22,20 +26,10 @@ public class Audio {
         return classificacao;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public void setTotalReproducoes(int totalReproducoes) {
-        this.totalReproducoes = totalReproducoes;
-    }
-
-    public void setClassificacao(int classificacao) {
-        this.classificacao = classificacao;
-    }
     public void curtir() {
         totaCurtidas += 1;
     }
+
     public void reprosuzir() {
         System.out.println("Tocando: " + titulo);
     }

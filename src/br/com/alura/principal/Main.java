@@ -2,6 +2,7 @@ package br.com.alura.principal;
 
 import br.com.alura.midia.Musica;
 import br.com.alura.midia.Podcast;
+import br.com.alura.midia.Preferidas;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,16 +10,18 @@ public class Main {
         musicaTeste.setTitulo("Python");
         musicaTeste.setCantor("GOT7");
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 3000; i++) {
             musicaTeste.reprosuzir();
             if (i % 2 == 0)
                 musicaTeste.curtir();
         }
 
         System.out.printf("""
+                Musica:               %s
                 Total de Reproduções: %d
                 Total de Curtidas:    %d
-                """, musicaTeste.getTotalReproducoes(),musicaTeste.getTotaCurtidas());
+                
+                """,musicaTeste.getTitulo(), musicaTeste.getTotalReproducoes(), musicaTeste.getTotaCurtidas());
 
         Podcast podcastTeste = new Podcast();
         podcastTeste.setTitulo("Vrau Cast");
@@ -31,8 +34,14 @@ public class Main {
         }
 
         System.out.printf("""
+                Podcast:              %s
                 Total de Reproduções: %d
                 Total de Curtidas:    %d
-                """, podcastTeste.getTotalReproducoes(),podcastTeste.getTotaCurtidas());
+                
+                """,podcastTeste.getTitulo(), podcastTeste.getTotalReproducoes(), podcastTeste.getTotaCurtidas());
+
+        Preferidas preferidas = new Preferidas();
+        preferidas.inclui(musicaTeste);
+        preferidas.inclui(podcastTeste);
     }
 }
